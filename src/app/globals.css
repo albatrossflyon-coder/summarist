@@ -1758,3 +1758,52 @@ button:disabled {
   margin-top: 8px;
   max-width: 200px;
 }
+
+/* ===================================================
+   RESPONSIVE OVERRIDES — must stay at end of file
+   so they win over all desktop rules above
+   =================================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+  }
+
+  .for-you__wrapper,
+  .book-detail__wrapper,
+  .settings__wrapper,
+  .player__wrapper,
+  .choose-plan__wrapper,
+  .search__wrapper,
+  .library__wrapper {
+    margin-left: 0 !important;
+    padding: 24px 16px 80px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .for-you__wrapper,
+  .book-detail__wrapper,
+  .settings__wrapper,
+  .player__wrapper,
+  .choose-plan__wrapper,
+  .search__wrapper,
+  .library__wrapper {
+    padding: 16px 12px 80px !important;
+  }
+
+  .landing__content__title {
+    font-size: 20px;
+  }
+
+  .book-detail__title {
+    font-size: 18px;
+  }
+
+  .choose-plan__title {
+    font-size: 22px;
+  }
+}
