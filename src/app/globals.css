@@ -587,7 +587,77 @@ button:disabled {
   min-height: 100vh;
 }
 
+/* BOTTOM NAV — hidden on desktop */
+.bottom-nav {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  /* Hide sidebar, show bottom nav */
+  .sidebar {
+    display: none;
+  }
+
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: #f7f8f9;
+    border-top: 1px solid #e1e7ea;
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 8px;
+  }
+
+  .bottom-nav__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: #6b757b;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: color 150ms;
+    text-decoration: none;
+  }
+
+  .bottom-nav__item--active {
+    color: #032b41;
+  }
+
+  .bottom-nav__item--disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .bottom-nav__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .bottom-nav__label {
+    font-size: 10px;
+  }
+
+  /* Fix all page wrapper margins and padding */
+  .for-you__wrapper,
+  .book-detail__wrapper,
+  .settings__wrapper,
+  .player__wrapper,
+  .choose-plan__wrapper,
+  .search__wrapper,
+  .library__wrapper {
+    margin-left: 0;
+    padding: 24px 16px 80px;
+  }
+
+  /* Landing page */
   .landing__content {
     display: flex;
     flex-direction: column;
@@ -605,43 +675,9 @@ button:disabled {
     font-size: 24px;
   }
 
+  /* Features */
   .features__wrapper {
     grid-template-columns: 1fr;
-  }
-
-  .statistics__wrapper {
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 32px;
-  }
-
-  .statistics__heading {
-    font-size: 24px;
-  }
-
-  .footer__top--wrapper {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .numbers__wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .statistics__content--details-second {
-    order: 1;
-  }
-
-  .statistics__content--header-second {
-    align-items: flex-start;
-  }
-
-  .statistics__data--title {
-    font-size: 16px;
-  }
-
-  .section__title {
-    font-size: 24px;
   }
 
   .features__title {
@@ -657,8 +693,32 @@ button:disabled {
     height: 48px;
   }
 
-  .review__body {
-    font-size: 14px;
+  /* Statistics */
+  .statistics__wrapper {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .statistics__heading {
+    font-size: 24px;
+  }
+
+  .statistics__content--details-second {
+    order: 1;
+  }
+
+  .statistics__content--header-second {
+    align-items: flex-start;
+  }
+
+  .statistics__data--title {
+    font-size: 16px;
+  }
+
+  /* Numbers */
+  .numbers__wrapper {
+    grid-template-columns: 1fr;
   }
 
   .numbers__title {
@@ -669,6 +729,22 @@ button:disabled {
     font-size: 14px;
   }
 
+  /* Reviews */
+  .review__body {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer__top--wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Shared */
+  .section__title {
+    font-size: 24px;
+  }
+
   .remove--tablet {
     display: none;
   }
@@ -676,11 +752,67 @@ button:disabled {
   .main__content {
     margin-left: 0;
   }
+
+  /* Book detail */
+  .book-detail__content {
+    flex-direction: column;
+  }
+
+  .book-detail__right {
+    width: 140px;
+    align-self: center;
+  }
+
+  .book-detail__title {
+    font-size: 22px;
+  }
+
+  /* Player */
+  .player__book--info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .player__controls {
+    max-width: 100%;
+  }
+
+  /* Search results */
+  .search__results {
+    justify-content: center;
+  }
+
+  /* Settings */
+  .settings__title {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 576px) {
   .nav__list--mobile {
     display: none;
+  }
+
+  .for-you__wrapper,
+  .book-detail__wrapper,
+  .settings__wrapper,
+  .player__wrapper,
+  .choose-plan__wrapper,
+  .search__wrapper,
+  .library__wrapper {
+    padding: 16px 12px 80px;
+  }
+
+  .landing__content__title {
+    font-size: 20px;
+  }
+
+  .book-detail__title {
+    font-size: 18px;
+  }
+
+  .choose-plan__title {
+    font-size: 22px;
   }
 }
 
