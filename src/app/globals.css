@@ -825,8 +825,14 @@ button:disabled {
 .for-you__wrapper {
   margin-left: 220px;
   flex: 1;
+  min-width: 0;
   padding: 40px;
   max-width: 1070px;
+}
+
+.for-you__content {
+  width: 100%;
+  min-width: 0;
 }
 
 /* FOR YOU TITLES */
@@ -930,8 +936,14 @@ button:disabled {
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
   margin-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.for-you__recommended--books::-webkit-scrollbar {
+  display: none;
 }
 
 /* BOOK CARD */
@@ -1617,6 +1629,7 @@ button:disabled {
 .search__wrapper {
   margin-left: 220px;
   flex: 1;
+  min-width: 0;
   padding: 40px;
   max-width: 1070px;
 }
@@ -1716,6 +1729,7 @@ button:disabled {
 .library__wrapper {
   margin-left: 220px;
   flex: 1;
+  min-width: 0;
   padding: 40px;
   max-width: 1070px;
 }

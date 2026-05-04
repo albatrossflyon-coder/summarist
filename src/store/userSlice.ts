@@ -5,6 +5,7 @@ interface UserState {
   email: string | null;
   isSubscribed: boolean;
   plan: "basic" | "premium" | "premium-plus";
+  authLoading: boolean;
 }
 
 const initialState: UserState = {
@@ -12,6 +13,7 @@ const initialState: UserState = {
   email: null,
   isSubscribed: false,
   plan: "basic",
+  authLoading: true,
 };
 
 const userSlice = createSlice({
@@ -32,8 +34,11 @@ const userSlice = createSlice({
       state.isSubscribed = false;
       state.plan = "basic";
     },
+    setAuthLoading: (state, action) => {
+      state.authLoading = action.payload;
+    },
   },
 });
 
-export const { setUser, setSubscription, clearUser } = userSlice.actions;
+export const { setUser, setSubscription, clearUser, setAuthLoading } = userSlice.actions;
 export default userSlice.reducer;
