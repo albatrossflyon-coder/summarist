@@ -21,6 +21,7 @@ export default function BookPage() {
   const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
   const [saved, setSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     if (user.authLoading) return;
@@ -39,13 +40,18 @@ export default function BookPage() {
 
   async function toggleSave() {
     if (!user.uid || !book) return;
+    setSaveError(null);
     const ref = doc(db, "users", user.uid, "savedBooks", book.id);
-    if (saved) {
-      await deleteDoc(ref);
-      setSaved(false);
-    } else {
-      await setDoc(ref, book);
-      setSaved(true);
+    try {
+      if (saved) {
+        await deleteDoc(ref);
+        setSaved(false);
+      } else {
+        await setDoc(ref, book);
+        setSaved(true);
+      }
+    } catch {
+      setSaveError("Could not update library — please try again.");
     }
   }
 
@@ -108,6 +114,9 @@ export default function BookPage() {
               {saved ? <BsBookmarkFill /> : <BsBookmark />}
               {saved ? "Saved" : "Add to Library"}
             </button>
+            {saveError && (
+              <div className="book-detail__save--error">{saveError}</div>
+            )}
           </div>
 
           {isPremiumLocked && (

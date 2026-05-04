@@ -1821,3 +1821,91 @@ button:disabled {
     font-size: 22px;
   }
 }
+
+/* ===================================================
+   BURGER BUTTON — mobile only
+   =================================================== */
+.burger-btn {
+  display: none;
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 200;
+  background: #032b41;
+  color: #fff;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+/* SIDEBAR OVERLAY BACKDROP */
+.sidebar__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+/* SIDEBAR CLOSE BUTTON — inside drawer on mobile */
+.sidebar__close {
+  display: none;
+  align-self: flex-end;
+  margin: 0 16px 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #394547;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* BOOK DETAIL SAVE ERROR */
+.book-detail__save--error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: flex;
+  }
+
+  .sidebar--open {
+    display: flex !important;
+  }
+
+  .sidebar__overlay--visible {
+    display: block;
+  }
+
+  .sidebar__close {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .selected__book--content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selected__book--image--mask {
+    width: 120px;
+    height: 120px;
+  }
+
+  .selected__book--text {
+    text-align: center;
+  }
+
+  .selected__book--details--wrapper {
+    justify-content: center;
+  }
+}

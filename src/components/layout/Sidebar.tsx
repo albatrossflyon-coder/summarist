@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AiFillHome } from "react-icons/ai";
@@ -32,6 +33,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const dispatch = useDispatch();
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   async function handleSignOut() {
     await signOut(auth);
@@ -39,9 +41,24 @@ export default function Sidebar() {
     router.push("/");
   }
 
+  function close() {
+    setIsOpen(false);
+  }
+
   return (
     <>
-      <div className="sidebar">
+      <button className="burger-btn" onClick={() => setIsOpen(true)} aria-label="Open menu">
+        &#9776;
+      </button>
+
+      <div
+        className={`sidebar__overlay${isOpen ? " sidebar__overlay--visible" : ""}`}
+        onClick={close}
+      />
+
+      <div className={`sidebar${isOpen ? " sidebar--open" : ""}`}>
+        <button className="sidebar__close" onClick={close} aria-label="Close menu">&#x2715;</button>
+
         <div className="sidebar__logo--wrapper">
           <img src="/assets/logo.png" alt="logo" className="sidebar__logo" />
         </div>
@@ -58,7 +75,7 @@ export default function Sidebar() {
                     <span>{label}</span>
                   </span>
                 ) : (
-                  <Link href={href} className="sidebar__link">
+                  <Link href={href} className="sidebar__link" onClick={close}>
                     <Icon className="sidebar__icon" />
                     <span>{label}</span>
                   </Link>
