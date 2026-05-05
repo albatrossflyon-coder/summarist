@@ -675,6 +675,20 @@ button:disabled {
     font-size: 24px;
   }
 
+  /* FOR YOU PAGE - Book cards responsive wrapping */
+  .for-you__recommended--books {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  .book {
+    flex-shrink: 1;
+    min-width: auto;
+    width: calc(50% - 8px);
+    max-width: 100%;
+  }
+
   /* Features */
   .features__wrapper {
     grid-template-columns: 1fr;
