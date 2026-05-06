@@ -677,9 +677,8 @@ button:disabled {
 
   /* FOR YOU PAGE - Book cards responsive wrapping */
   .for-you__recommended--books {
-    overflow-x: auto;
+    overflow-x: visible;
     flex-wrap: wrap;
-    -webkit-overflow-scrolling: touch;
   }
 
   .book {
