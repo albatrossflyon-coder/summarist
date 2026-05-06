@@ -840,7 +840,6 @@ button:disabled {
   flex: 1;
   min-width: 0;
   padding: 40px;
-  max-width: 1070px;
 }
 
 .for-you__content {
@@ -1096,8 +1095,9 @@ button:disabled {
 /* BOOK DETAIL PAGE */
 .book-detail__wrapper {
   margin-left: 220px;
+  flex: 1;
+  min-width: 0;
   padding: 40px;
-  max-width: 1070px;
 }
 
 .book-detail__content {
@@ -1274,8 +1274,9 @@ button:disabled {
 /* SETTINGS PAGE */
 .settings__wrapper {
   margin-left: 220px;
+  flex: 1;
+  min-width: 0;
   padding: 40px;
-  max-width: 600px;
 }
 
 .settings__title {
@@ -1321,8 +1322,8 @@ button:disabled {
 .player__wrapper {
   margin-left: 220px;
   flex: 1;
+  min-width: 0;
   padding: 40px;
-  max-width: 860px;
 }
 
 .player__content {
@@ -1491,8 +1492,8 @@ button:disabled {
 .choose-plan__wrapper {
   margin-left: 220px;
   flex: 1;
+  min-width: 0;
   padding: 40px;
-  max-width: 680px;
 }
 
 .choose-plan__content {
@@ -1644,7 +1645,6 @@ button:disabled {
   flex: 1;
   min-width: 0;
   padding: 40px;
-  max-width: 1070px;
 }
 
 .search__content {
@@ -1744,7 +1744,6 @@ button:disabled {
   flex: 1;
   min-width: 0;
   padding: 40px;
-  max-width: 1070px;
 }
 
 .library__title {
