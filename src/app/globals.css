@@ -1171,6 +1171,7 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: auto;
   min-width: 140px;
   height: 48px;
   font-size: 16px;
@@ -1919,5 +1920,50 @@ button:disabled {
 
   .selected__book--details--wrapper {
     justify-content: center;
+  }
+}
+
+/* ===================================================
+   TABLET OVERRIDE — sidebar hides at 1024px so app
+   content is never cramped on iPad / small laptop
+   =================================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  .sidebar--open {
+    display: flex !important;
+  }
+
+  .sidebar__overlay--visible {
+    display: block;
+  }
+
+  .sidebar__close {
+    display: block;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+  }
+
+  .burger-btn {
+    display: flex !important;
+  }
+
+  .for-you__wrapper,
+  .book-detail__wrapper,
+  .settings__wrapper,
+  .player__wrapper,
+  .choose-plan__wrapper,
+  .search__wrapper,
+  .library__wrapper {
+    margin-left: 0 !important;
+    padding: 24px 16px 80px !important;
+  }
+
+  .main__content {
+    margin-left: 0;
   }
 }
